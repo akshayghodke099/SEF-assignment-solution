@@ -7755,3 +7755,490 @@ alter view "mydb"."main"."fct_daily_revenue__dbt_tmp" rename to "fct_daily_reven
 [0m19:39:29.633966 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C4BB28C470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C4B960C6B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C4BB757D70>]}
 [0m19:39:29.634270 [debug] [MainThread]: Flushing usage events
 [0m19:39:32.679171 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:22:35.787049 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A14CE01010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A14DF6FED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A14DF6FB10>]}
+
+
+============================== 09:22:35.793555 | 6e80e7fa-565a-4021-b685-da8f379bcdda ==============================
+[0m09:22:35.793555 [info ] [MainThread]: Running with dbt=1.11.2
+[0m09:22:35.794248 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\admin\\.dbt', 'invocation_command': 'dbt run', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'E:\\Akshay Pre Work SEF\\SEF Assignment Solution\\sef_prework\\logs'}
+[0m09:22:36.202999 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6e80e7fa-565a-4021-b685-da8f379bcdda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A14D295220>]}
+[0m09:22:36.252707 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6e80e7fa-565a-4021-b685-da8f379bcdda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A14E071590>]}
+[0m09:22:36.286188 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m09:22:36.673082 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m09:22:39.404082 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m09:22:39.406280 [debug] [MainThread]: Partial parsing: updated file: sef_prework://models\final\fct_daily_revenue.sql
+[0m09:22:39.833826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6e80e7fa-565a-4021-b685-da8f379bcdda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A14F477550>]}
+[0m09:22:40.013940 [debug] [MainThread]: Wrote artifact WritableManifest to E:\Akshay Pre Work SEF\SEF Assignment Solution\sef_prework\target\manifest.json
+[0m09:22:40.069254 [debug] [MainThread]: Wrote artifact SemanticManifest to E:\Akshay Pre Work SEF\SEF Assignment Solution\sef_prework\target\semantic_manifest.json
+[0m09:22:40.155753 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6e80e7fa-565a-4021-b685-da8f379bcdda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A14F3F7110>]}
+[0m09:22:40.156637 [info ] [MainThread]: Found 5 models, 6 data tests, 472 macros
+[0m09:22:40.157723 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6e80e7fa-565a-4021-b685-da8f379bcdda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A14F2D8750>]}
+[0m09:22:40.165072 [info ] [MainThread]: 
+[0m09:22:40.166210 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m09:22:40.167223 [info ] [MainThread]: 
+[0m09:22:40.167826 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m09:22:40.179560 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_mydb'
+[0m09:22:46.082739 [debug] [ThreadPool]: Using duckdb connection "list_mydb"
+[0m09:22:46.083176 [debug] [ThreadPool]: On list_mydb: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "connection_name": "list_mydb"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"mydb"'
+    
+  
+  
+[0m09:22:46.083458 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:22:46.103110 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "connection_name": "list_mydb"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"mydb"'
+    
+  
+  
+[0m09:22:46.103555 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m09:22:46.104746 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:22:46.105152 [debug] [MainThread]: Connection 'list_mydb' was properly closed.
+[0m09:22:46.105405 [info ] [MainThread]: 
+[0m09:22:46.105987 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 5.94 seconds (5.94s).
+[0m09:22:46.107045 [error] [MainThread]: Encountered an error:
+Runtime Error
+  IO Error: Cannot open file "e:\akshay pre work sef 1\sef_prework\mydb.duckdb": The system cannot find the path specified.
+  
+[0m09:22:46.108035 [debug] [MainThread]: Command `dbt run` failed at 09:22:46.107911 after 10.51 seconds
+[0m09:22:46.108405 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A14F984D50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A14DD86750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A14F55F710>]}
+[0m09:22:46.108753 [debug] [MainThread]: Flushing usage events
+[0m09:22:47.485003 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:24:17.769694 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024179A31010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002417AB9FED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002417AB9FB10>]}
+
+
+============================== 09:24:17.773613 | 71cdd847-947d-4e7b-9cdd-db6335a43909 ==============================
+[0m09:24:17.773613 [info ] [MainThread]: Running with dbt=1.11.2
+[0m09:24:17.774231 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\admin\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt run', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'E:\\Akshay Pre Work SEF\\SEF Assignment Solution\\sef_prework\\logs'}
+[0m09:24:17.959398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '71cdd847-947d-4e7b-9cdd-db6335a43909', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024179EC5220>]}
+[0m09:24:18.009900 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '71cdd847-947d-4e7b-9cdd-db6335a43909', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002417ACA1590>]}
+[0m09:24:18.012457 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m09:24:18.154138 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m09:24:18.252379 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m09:24:18.253055 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '71cdd847-947d-4e7b-9cdd-db6335a43909', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002417C05C150>]}
+[0m09:24:19.256292 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '71cdd847-947d-4e7b-9cdd-db6335a43909', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002417C228140>]}
+[0m09:24:19.308941 [debug] [MainThread]: Wrote artifact WritableManifest to E:\Akshay Pre Work SEF\SEF Assignment Solution\sef_prework\target\manifest.json
+[0m09:24:19.310957 [debug] [MainThread]: Wrote artifact SemanticManifest to E:\Akshay Pre Work SEF\SEF Assignment Solution\sef_prework\target\semantic_manifest.json
+[0m09:24:19.339258 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '71cdd847-947d-4e7b-9cdd-db6335a43909', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002417C28B850>]}
+[0m09:24:19.339723 [info ] [MainThread]: Found 5 models, 6 data tests, 472 macros
+[0m09:24:19.340270 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '71cdd847-947d-4e7b-9cdd-db6335a43909', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002417C13AD00>]}
+[0m09:24:19.342708 [info ] [MainThread]: 
+[0m09:24:19.343277 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m09:24:19.343656 [info ] [MainThread]: 
+[0m09:24:19.344179 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m09:24:19.348588 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_mydb'
+[0m09:24:19.398745 [debug] [ThreadPool]: Using duckdb connection "list_mydb"
+[0m09:24:19.399086 [debug] [ThreadPool]: On list_mydb: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "connection_name": "list_mydb"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"mydb"'
+    
+  
+  
+[0m09:24:19.399311 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:24:19.407803 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "connection_name": "list_mydb"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"mydb"'
+    
+  
+  
+[0m09:24:19.408166 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m09:24:19.409178 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:24:19.409423 [debug] [MainThread]: Connection 'list_mydb' was properly closed.
+[0m09:24:19.409618 [info ] [MainThread]: 
+[0m09:24:19.410085 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.07 seconds (0.07s).
+[0m09:24:19.410704 [error] [MainThread]: Encountered an error:
+Runtime Error
+  IO Error: Cannot open file "e:\akshay pre work sef\sef_prework\mydb.duckdb": The system cannot find the path specified.
+  
+[0m09:24:19.411603 [debug] [MainThread]: Command `dbt run` failed at 09:24:19.411503 after 1.77 seconds
+[0m09:24:19.411880 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002417A9B6750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002417C106410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002417C107960>]}
+[0m09:24:19.412196 [debug] [MainThread]: Flushing usage events
+[0m09:24:20.500230 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:25:15.852161 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD57E1010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD6947ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD6947B10>]}
+
+
+============================== 09:25:15.856133 | 3bf75d98-760d-4203-b7ef-cc6c0a020cbd ==============================
+[0m09:25:15.856133 [info ] [MainThread]: Running with dbt=1.11.2
+[0m09:25:15.856811 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\admin\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt run', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'E:\\Akshay Pre Work SEF\\SEF Assignment Solution\\sef_prework\\logs'}
+[0m09:25:16.042984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3bf75d98-760d-4203-b7ef-cc6c0a020cbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD5C75220>]}
+[0m09:25:16.091876 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3bf75d98-760d-4203-b7ef-cc6c0a020cbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD6A51590>]}
+[0m09:25:16.094415 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m09:25:16.234189 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m09:25:16.318729 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m09:25:16.319524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '3bf75d98-760d-4203-b7ef-cc6c0a020cbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD7E38150>]}
+[0m09:25:17.242726 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3bf75d98-760d-4203-b7ef-cc6c0a020cbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD800C140>]}
+[0m09:25:17.295955 [debug] [MainThread]: Wrote artifact WritableManifest to E:\Akshay Pre Work SEF\SEF Assignment Solution\sef_prework\target\manifest.json
+[0m09:25:17.297882 [debug] [MainThread]: Wrote artifact SemanticManifest to E:\Akshay Pre Work SEF\SEF Assignment Solution\sef_prework\target\semantic_manifest.json
+[0m09:25:17.325466 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3bf75d98-760d-4203-b7ef-cc6c0a020cbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD806B850>]}
+[0m09:25:17.325921 [info ] [MainThread]: Found 5 models, 6 data tests, 472 macros
+[0m09:25:17.326521 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3bf75d98-760d-4203-b7ef-cc6c0a020cbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD7ED2D00>]}
+[0m09:25:17.328426 [info ] [MainThread]: 
+[0m09:25:17.328973 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m09:25:17.329916 [info ] [MainThread]: 
+[0m09:25:17.330533 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m09:25:17.334753 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_mydb'
+[0m09:25:17.385589 [debug] [ThreadPool]: Using duckdb connection "list_mydb"
+[0m09:25:17.385924 [debug] [ThreadPool]: On list_mydb: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "connection_name": "list_mydb"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"mydb"'
+    
+  
+  
+[0m09:25:17.386142 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:25:17.464257 [debug] [ThreadPool]: SQL status: OK in 0.078 seconds
+[0m09:25:17.465581 [debug] [ThreadPool]: On list_mydb: Close
+[0m09:25:17.466244 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_mydb, now create_mydb_main)
+[0m09:25:17.466590 [debug] [ThreadPool]: Creating schema "database: "mydb"
+schema: "main"
+"
+[0m09:25:17.471207 [debug] [ThreadPool]: Using duckdb connection "create_mydb_main"
+[0m09:25:17.471448 [debug] [ThreadPool]: On create_mydb_main: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "connection_name": "create_mydb_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='mydb'
+        and type='sqlite'
+    
+  
+[0m09:25:17.471647 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:25:17.472757 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m09:25:17.473708 [debug] [ThreadPool]: Using duckdb connection "create_mydb_main"
+[0m09:25:17.473920 [debug] [ThreadPool]: On create_mydb_main: BEGIN
+[0m09:25:17.474325 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m09:25:17.474524 [debug] [ThreadPool]: Using duckdb connection "create_mydb_main"
+[0m09:25:17.474699 [debug] [ThreadPool]: On create_mydb_main: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "connection_name": "create_mydb_main"} */
+
+    
+    
+        create schema if not exists "mydb"."main"
+    
+[0m09:25:17.476208 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m09:25:17.477001 [debug] [ThreadPool]: On create_mydb_main: COMMIT
+[0m09:25:17.477220 [debug] [ThreadPool]: Using duckdb connection "create_mydb_main"
+[0m09:25:17.477404 [debug] [ThreadPool]: On create_mydb_main: COMMIT
+[0m09:25:17.477785 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m09:25:17.477998 [debug] [ThreadPool]: On create_mydb_main: Close
+[0m09:25:17.479577 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_mydb_main'
+[0m09:25:17.483516 [debug] [ThreadPool]: Using duckdb connection "list_mydb_main"
+[0m09:25:17.483761 [debug] [ThreadPool]: On list_mydb_main: BEGIN
+[0m09:25:17.483948 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:25:17.484856 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m09:25:17.485061 [debug] [ThreadPool]: Using duckdb connection "list_mydb_main"
+[0m09:25:17.485262 [debug] [ThreadPool]: On list_mydb_main: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "connection_name": "list_mydb_main"} */
+select
+      'mydb' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'mydb'
+  
+[0m09:25:17.502714 [debug] [ThreadPool]: SQL status: OK in 0.017 seconds
+[0m09:25:17.503930 [debug] [ThreadPool]: On list_mydb_main: ROLLBACK
+[0m09:25:17.536283 [debug] [ThreadPool]: Failed to rollback 'list_mydb_main'
+[0m09:25:17.536607 [debug] [ThreadPool]: On list_mydb_main: Close
+[0m09:25:17.538522 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3bf75d98-760d-4203-b7ef-cc6c0a020cbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD8113650>]}
+[0m09:25:17.538918 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:25:17.539150 [debug] [MainThread]: On master: BEGIN
+[0m09:25:17.539354 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:25:17.539900 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m09:25:17.540130 [debug] [MainThread]: On master: COMMIT
+[0m09:25:17.540341 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:25:17.540537 [debug] [MainThread]: On master: COMMIT
+[0m09:25:17.540929 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m09:25:17.541166 [debug] [MainThread]: On master: Close
+[0m09:25:17.547274 [debug] [Thread-1 (]: Began running node model.sef_prework.stg_orders
+[0m09:25:17.547795 [info ] [Thread-1 (]: 1 of 5 START sql view model main.stg_orders .................................... [RUN]
+[0m09:25:17.548590 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.sef_prework.stg_orders'
+[0m09:25:17.548873 [debug] [Thread-1 (]: Began compiling node model.sef_prework.stg_orders
+[0m09:25:17.553406 [debug] [Thread-1 (]: Writing injected SQL for node "model.sef_prework.stg_orders"
+[0m09:25:17.554931 [debug] [Thread-1 (]: Began executing node model.sef_prework.stg_orders
+[0m09:25:17.578571 [debug] [Thread-1 (]: Writing runtime sql for node "model.sef_prework.stg_orders"
+[0m09:25:17.580362 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_orders"
+[0m09:25:17.580797 [debug] [Thread-1 (]: On model.sef_prework.stg_orders: BEGIN
+[0m09:25:17.581058 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m09:25:17.581878 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:25:17.582149 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_orders"
+[0m09:25:17.582371 [debug] [Thread-1 (]: On model.sef_prework.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.stg_orders"} */
+
+  
+  create view "mydb"."main"."stg_orders__dbt_tmp" as (
+    SELECT 
+    order_id,
+    user_id,
+    order_date,
+    amount,
+    status
+FROM orders
+  );
+
+[0m09:25:17.582968 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:25:17.587666 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_orders"
+[0m09:25:17.587971 [debug] [Thread-1 (]: On model.sef_prework.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.stg_orders"} */
+alter view "mydb"."main"."stg_orders" rename to "stg_orders__dbt_backup"
+[0m09:25:17.588618 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:25:17.590639 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_orders"
+[0m09:25:17.590899 [debug] [Thread-1 (]: On model.sef_prework.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.stg_orders"} */
+alter view "mydb"."main"."stg_orders__dbt_tmp" rename to "stg_orders"
+[0m09:25:17.591411 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:25:17.600801 [debug] [Thread-1 (]: On model.sef_prework.stg_orders: COMMIT
+[0m09:25:17.601154 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_orders"
+[0m09:25:17.601391 [debug] [Thread-1 (]: On model.sef_prework.stg_orders: COMMIT
+[0m09:25:17.605749 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m09:25:17.610025 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_orders"
+[0m09:25:17.610306 [debug] [Thread-1 (]: On model.sef_prework.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.stg_orders"} */
+
+      drop view if exists "mydb"."main"."stg_orders__dbt_backup" cascade
+    
+[0m09:25:17.613800 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:25:17.616066 [debug] [Thread-1 (]: On model.sef_prework.stg_orders: Close
+[0m09:25:17.618095 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3bf75d98-760d-4203-b7ef-cc6c0a020cbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD86AC1B0>]}
+[0m09:25:17.618665 [info ] [Thread-1 (]: 1 of 5 OK created sql view model main.stg_orders ............................... [[32mOK[0m in 0.07s]
+[0m09:25:17.619433 [debug] [Thread-1 (]: Finished running node model.sef_prework.stg_orders
+[0m09:25:17.619757 [debug] [Thread-1 (]: Began running node model.sef_prework.stg_payments
+[0m09:25:17.620277 [info ] [Thread-1 (]: 2 of 5 START sql view model main.stg_payments .................................. [RUN]
+[0m09:25:17.620949 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sef_prework.stg_orders, now model.sef_prework.stg_payments)
+[0m09:25:17.621235 [debug] [Thread-1 (]: Began compiling node model.sef_prework.stg_payments
+[0m09:25:17.622508 [debug] [Thread-1 (]: Writing injected SQL for node "model.sef_prework.stg_payments"
+[0m09:25:17.623103 [debug] [Thread-1 (]: Began executing node model.sef_prework.stg_payments
+[0m09:25:17.625670 [debug] [Thread-1 (]: Writing runtime sql for node "model.sef_prework.stg_payments"
+[0m09:25:17.626303 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_payments"
+[0m09:25:17.626555 [debug] [Thread-1 (]: On model.sef_prework.stg_payments: BEGIN
+[0m09:25:17.626769 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:25:17.627326 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:25:17.627577 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_payments"
+[0m09:25:17.627798 [debug] [Thread-1 (]: On model.sef_prework.stg_payments: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.stg_payments"} */
+
+  
+  create view "mydb"."main"."stg_payments__dbt_tmp" as (
+    SELECT 
+    payment_id,
+    order_id,
+    payment_method,
+    payment_status
+FROM payments
+  );
+
+[0m09:25:17.628375 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:25:17.630463 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_payments"
+[0m09:25:17.630815 [debug] [Thread-1 (]: On model.sef_prework.stg_payments: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.stg_payments"} */
+alter view "mydb"."main"."stg_payments" rename to "stg_payments__dbt_backup"
+[0m09:25:17.631679 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:25:17.634276 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_payments"
+[0m09:25:17.634578 [debug] [Thread-1 (]: On model.sef_prework.stg_payments: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.stg_payments"} */
+alter view "mydb"."main"."stg_payments__dbt_tmp" rename to "stg_payments"
+[0m09:25:17.635201 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:25:17.636291 [debug] [Thread-1 (]: On model.sef_prework.stg_payments: COMMIT
+[0m09:25:17.636549 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_payments"
+[0m09:25:17.636771 [debug] [Thread-1 (]: On model.sef_prework.stg_payments: COMMIT
+[0m09:25:17.640238 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:25:17.642116 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_payments"
+[0m09:25:17.642384 [debug] [Thread-1 (]: On model.sef_prework.stg_payments: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.stg_payments"} */
+
+      drop view if exists "mydb"."main"."stg_payments__dbt_backup" cascade
+    
+[0m09:25:17.645718 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:25:17.646956 [debug] [Thread-1 (]: On model.sef_prework.stg_payments: Close
+[0m09:25:17.647428 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3bf75d98-760d-4203-b7ef-cc6c0a020cbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD8695DB0>]}
+[0m09:25:17.647997 [info ] [Thread-1 (]: 2 of 5 OK created sql view model main.stg_payments ............................. [[32mOK[0m in 0.03s]
+[0m09:25:17.648700 [debug] [Thread-1 (]: Finished running node model.sef_prework.stg_payments
+[0m09:25:17.649030 [debug] [Thread-1 (]: Began running node model.sef_prework.stg_users
+[0m09:25:17.649773 [info ] [Thread-1 (]: 3 of 5 START sql view model main.stg_users ..................................... [RUN]
+[0m09:25:17.650516 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sef_prework.stg_payments, now model.sef_prework.stg_users)
+[0m09:25:17.650813 [debug] [Thread-1 (]: Began compiling node model.sef_prework.stg_users
+[0m09:25:17.652091 [debug] [Thread-1 (]: Writing injected SQL for node "model.sef_prework.stg_users"
+[0m09:25:17.652716 [debug] [Thread-1 (]: Began executing node model.sef_prework.stg_users
+[0m09:25:17.655259 [debug] [Thread-1 (]: Writing runtime sql for node "model.sef_prework.stg_users"
+[0m09:25:17.655942 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_users"
+[0m09:25:17.656225 [debug] [Thread-1 (]: On model.sef_prework.stg_users: BEGIN
+[0m09:25:17.656441 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:25:17.657004 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:25:17.657256 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_users"
+[0m09:25:17.657477 [debug] [Thread-1 (]: On model.sef_prework.stg_users: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.stg_users"} */
+
+  
+  create view "mydb"."main"."stg_users__dbt_tmp" as (
+    SELECT 
+    user_id,
+    signup_date,
+    city
+FROM users
+  );
+
+[0m09:25:17.658087 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:25:17.660169 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_users"
+[0m09:25:17.660424 [debug] [Thread-1 (]: On model.sef_prework.stg_users: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.stg_users"} */
+alter view "mydb"."main"."stg_users" rename to "stg_users__dbt_backup"
+[0m09:25:17.660954 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:25:17.662829 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_users"
+[0m09:25:17.663076 [debug] [Thread-1 (]: On model.sef_prework.stg_users: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.stg_users"} */
+alter view "mydb"."main"."stg_users__dbt_tmp" rename to "stg_users"
+[0m09:25:17.663610 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:25:17.665284 [debug] [Thread-1 (]: On model.sef_prework.stg_users: COMMIT
+[0m09:25:17.665788 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_users"
+[0m09:25:17.666066 [debug] [Thread-1 (]: On model.sef_prework.stg_users: COMMIT
+[0m09:25:17.669514 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:25:17.671530 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.stg_users"
+[0m09:25:17.671822 [debug] [Thread-1 (]: On model.sef_prework.stg_users: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.stg_users"} */
+
+      drop view if exists "mydb"."main"."stg_users__dbt_backup" cascade
+    
+[0m09:25:17.675110 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:25:17.676338 [debug] [Thread-1 (]: On model.sef_prework.stg_users: Close
+[0m09:25:17.676742 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3bf75d98-760d-4203-b7ef-cc6c0a020cbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD8553550>]}
+[0m09:25:17.677169 [info ] [Thread-1 (]: 3 of 5 OK created sql view model main.stg_users ................................ [[32mOK[0m in 0.03s]
+[0m09:25:17.677873 [debug] [Thread-1 (]: Finished running node model.sef_prework.stg_users
+[0m09:25:17.678137 [debug] [Thread-1 (]: Began running node model.sef_prework.int_orders
+[0m09:25:17.678430 [info ] [Thread-1 (]: 4 of 5 START sql view model main.int_orders .................................... [RUN]
+[0m09:25:17.678942 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sef_prework.stg_users, now model.sef_prework.int_orders)
+[0m09:25:17.679191 [debug] [Thread-1 (]: Began compiling node model.sef_prework.int_orders
+[0m09:25:17.682548 [debug] [Thread-1 (]: Writing injected SQL for node "model.sef_prework.int_orders"
+[0m09:25:17.683453 [debug] [Thread-1 (]: Began executing node model.sef_prework.int_orders
+[0m09:25:17.686118 [debug] [Thread-1 (]: Writing runtime sql for node "model.sef_prework.int_orders"
+[0m09:25:17.686819 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.int_orders"
+[0m09:25:17.687085 [debug] [Thread-1 (]: On model.sef_prework.int_orders: BEGIN
+[0m09:25:17.687300 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:25:17.687868 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:25:17.688120 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.int_orders"
+[0m09:25:17.688346 [debug] [Thread-1 (]: On model.sef_prework.int_orders: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.int_orders"} */
+
+  
+  create view "mydb"."main"."int_orders__dbt_tmp" as (
+    SELECT 
+    o.order_id,
+    o.user_id,
+    o.order_date,
+    o.amount,
+    o.status,
+    p.payment_id,
+    p.payment_method,
+    p.payment_status
+FROM "mydb"."main"."stg_orders" o
+LEFT JOIN "mydb"."main"."stg_payments" p
+  ON o.order_id = p.order_id
+  );
+
+[0m09:25:17.689075 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:25:17.691096 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.int_orders"
+[0m09:25:17.691346 [debug] [Thread-1 (]: On model.sef_prework.int_orders: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.int_orders"} */
+alter view "mydb"."main"."int_orders" rename to "int_orders__dbt_backup"
+[0m09:25:17.691857 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:25:17.693730 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.int_orders"
+[0m09:25:17.693974 [debug] [Thread-1 (]: On model.sef_prework.int_orders: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.int_orders"} */
+alter view "mydb"."main"."int_orders__dbt_tmp" rename to "int_orders"
+[0m09:25:17.694464 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:25:17.698492 [debug] [Thread-1 (]: On model.sef_prework.int_orders: COMMIT
+[0m09:25:17.698898 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.int_orders"
+[0m09:25:17.699142 [debug] [Thread-1 (]: On model.sef_prework.int_orders: COMMIT
+[0m09:25:17.702893 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:25:17.705246 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.int_orders"
+[0m09:25:17.705568 [debug] [Thread-1 (]: On model.sef_prework.int_orders: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.int_orders"} */
+
+      drop view if exists "mydb"."main"."int_orders__dbt_backup" cascade
+    
+[0m09:25:17.708975 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:25:17.710251 [debug] [Thread-1 (]: On model.sef_prework.int_orders: Close
+[0m09:25:17.710669 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3bf75d98-760d-4203-b7ef-cc6c0a020cbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD86FC9F0>]}
+[0m09:25:17.711100 [info ] [Thread-1 (]: 4 of 5 OK created sql view model main.int_orders ............................... [[32mOK[0m in 0.03s]
+[0m09:25:17.711859 [debug] [Thread-1 (]: Finished running node model.sef_prework.int_orders
+[0m09:25:17.712774 [debug] [Thread-1 (]: Began running node model.sef_prework.fct_daily_revenue
+[0m09:25:17.713416 [info ] [Thread-1 (]: 5 of 5 START sql view model main.fct_daily_revenue ............................. [RUN]
+[0m09:25:17.714125 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sef_prework.int_orders, now model.sef_prework.fct_daily_revenue)
+[0m09:25:17.714431 [debug] [Thread-1 (]: Began compiling node model.sef_prework.fct_daily_revenue
+[0m09:25:17.716511 [debug] [Thread-1 (]: Writing injected SQL for node "model.sef_prework.fct_daily_revenue"
+[0m09:25:17.717250 [debug] [Thread-1 (]: Began executing node model.sef_prework.fct_daily_revenue
+[0m09:25:17.719840 [debug] [Thread-1 (]: Writing runtime sql for node "model.sef_prework.fct_daily_revenue"
+[0m09:25:17.720576 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.fct_daily_revenue"
+[0m09:25:17.720837 [debug] [Thread-1 (]: On model.sef_prework.fct_daily_revenue: BEGIN
+[0m09:25:17.721067 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:25:17.721674 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:25:17.721918 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.fct_daily_revenue"
+[0m09:25:17.722139 [debug] [Thread-1 (]: On model.sef_prework.fct_daily_revenue: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.fct_daily_revenue"} */
+
+  
+  create view "mydb"."main"."fct_daily_revenue__dbt_tmp" as (
+    SELECT 
+    DATE(order_date) AS day,
+    SUM(amount) AS daily_revenue
+FROM "mydb"."main"."int_orders"
+WHERE payment_status = 'Completed'   -- for counting successful payments
+GROUP BY day
+ORDER BY day
+  );
+
+[0m09:25:17.723109 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:25:17.725290 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.fct_daily_revenue"
+[0m09:25:17.725567 [debug] [Thread-1 (]: On model.sef_prework.fct_daily_revenue: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.fct_daily_revenue"} */
+alter view "mydb"."main"."fct_daily_revenue" rename to "fct_daily_revenue__dbt_backup"
+[0m09:25:17.726193 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:25:17.728184 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.fct_daily_revenue"
+[0m09:25:17.728439 [debug] [Thread-1 (]: On model.sef_prework.fct_daily_revenue: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.fct_daily_revenue"} */
+alter view "mydb"."main"."fct_daily_revenue__dbt_tmp" rename to "fct_daily_revenue"
+[0m09:25:17.729033 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:25:17.730162 [debug] [Thread-1 (]: On model.sef_prework.fct_daily_revenue: COMMIT
+[0m09:25:17.730478 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.fct_daily_revenue"
+[0m09:25:17.730807 [debug] [Thread-1 (]: On model.sef_prework.fct_daily_revenue: COMMIT
+[0m09:25:17.735147 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m09:25:17.737312 [debug] [Thread-1 (]: Using duckdb connection "model.sef_prework.fct_daily_revenue"
+[0m09:25:17.737574 [debug] [Thread-1 (]: On model.sef_prework.fct_daily_revenue: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "sef_prework", "target_name": "dev", "node_id": "model.sef_prework.fct_daily_revenue"} */
+
+      drop view if exists "mydb"."main"."fct_daily_revenue__dbt_backup" cascade
+    
+[0m09:25:17.740924 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:25:17.742149 [debug] [Thread-1 (]: On model.sef_prework.fct_daily_revenue: Close
+[0m09:25:17.742603 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3bf75d98-760d-4203-b7ef-cc6c0a020cbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD8571730>]}
+[0m09:25:17.743038 [info ] [Thread-1 (]: 5 of 5 OK created sql view model main.fct_daily_revenue ........................ [[32mOK[0m in 0.03s]
+[0m09:25:17.743774 [debug] [Thread-1 (]: Finished running node model.sef_prework.fct_daily_revenue
+[0m09:25:17.745077 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:25:17.745331 [debug] [MainThread]: On master: BEGIN
+[0m09:25:17.745523 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m09:25:17.746068 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m09:25:17.746276 [debug] [MainThread]: On master: COMMIT
+[0m09:25:17.746464 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:25:17.746656 [debug] [MainThread]: On master: COMMIT
+[0m09:25:17.747119 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m09:25:17.747490 [debug] [MainThread]: On master: Close
+[0m09:25:17.747936 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:25:17.748146 [debug] [MainThread]: Connection 'create_mydb_main' was properly closed.
+[0m09:25:17.748329 [debug] [MainThread]: Connection 'list_mydb_main' was properly closed.
+[0m09:25:17.748494 [debug] [MainThread]: Connection 'model.sef_prework.fct_daily_revenue' was properly closed.
+[0m09:25:17.748776 [info ] [MainThread]: 
+[0m09:25:17.749335 [info ] [MainThread]: Finished running 5 view models in 0 hours 0 minutes and 0.42 seconds (0.42s).
+[0m09:25:17.750430 [debug] [MainThread]: Command end result
+[0m09:25:17.766839 [debug] [MainThread]: Wrote artifact WritableManifest to E:\Akshay Pre Work SEF\SEF Assignment Solution\sef_prework\target\manifest.json
+[0m09:25:17.768709 [debug] [MainThread]: Wrote artifact SemanticManifest to E:\Akshay Pre Work SEF\SEF Assignment Solution\sef_prework\target\semantic_manifest.json
+[0m09:25:17.773319 [debug] [MainThread]: Wrote artifact RunExecutionResult to E:\Akshay Pre Work SEF\SEF Assignment Solution\sef_prework\target\run_results.json
+[0m09:25:17.773596 [info ] [MainThread]: 
+[0m09:25:17.774069 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m09:25:17.774545 [info ] [MainThread]: 
+[0m09:25:17.775043 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=5
+[0m09:25:17.775860 [debug] [MainThread]: Command `dbt run` succeeded at 09:25:17.775767 after 2.04 seconds
+[0m09:25:17.776126 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD4170B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD8571FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011CD8570B90>]}
+[0m09:25:17.776383 [debug] [MainThread]: Flushing usage events
+[0m09:25:19.047780 [debug] [MainThread]: An error was encountered while trying to flush usage events

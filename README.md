@@ -1,75 +1,118 @@
-# 📘 Assignment A – dbt + DuckDB Project
+# 📘 SEF - PREWORK SOLUTION DOCUMENT – dbt + DuckDB Project <br>
+**(Performed by Akshay Ghodke)**
 
-## 1. How to Set Up and Run the Project
-**1. Create environment**
+## 1. How to Set Up and Run the Project:
+**1. Create environment:**
 
-   ```python -m venv dbt-env```<br>
-   ```dbt-env\Scripts\activate```<br>
-   ```pip install dbt-core dbt-duckdb duckdb```
+   ```python -m venv sef-dbt-env```<br>
+   ```sef-dbt-env\Scripts\activate```<br>
+   ```pip install dbt-core dbt-duckdb duckdb```<br>
+   ```dbt --version```<br>
 
-**2. Initialize project**
+**2. Initialize project:**
    ```dbt init sef_prework```
 
-**3. Initialize project**
-  Save <b> users.csv, orders.csv, payments.csv </b> into <b> sef_prework/data/ </b>
+**3. Downloaded CSVs and Kept in data folder:** <br>
+  Save <b> users.csv, orders.csv, payments.csv </b> into <b> sef_prework/data/ </b> <br>
 
-    Create DuckDB database
+**4. Create DuckDB database & Loade CSVs:**
 
 <b> python </b>
 > import duckdb <br>
 conn = duckdb.connect("sef_prework/mydb.duckdb") <br>
-conn.execute("CREATE TABLE users AS SELECT * FROM read_csv_auto('sef_prework/data/users.csv');") <br>
-conn.execute("CREATE TABLE orders AS SELECT * FROM read_csv_auto('sef_prework/data/orders.csv');") <br>
-conn.execute("CREATE TABLE payments AS SELECT * FROM read_csv_auto('sef_prework/data/payments.csv');") <br>
-conn.close() <br>
-Configure profiles.yml
 
-<b> yaml </b> <br> 
+> conn.execute("CREATE TABLE users AS SELECT * FROM read_csv_auto('sef_prework/data/users.csv');") <br>
+conn.execute("CREATE TABLE orders AS SELECT * FROM read_csv_auto('sef_prework/data/orders.csv');") <br>
+
+> conn.execute("CREATE TABLE payments AS SELECT * FROM read_csv_auto('sef_prework/data/payments.csv');") <br>
+
+>conn.close() <br>
+
+**5. Configure dbt Profiles: (profiles.yml)**<br>
+
+<b> yml </b> (~/.dbt/ or C:\Users\admin\.dbt\)<br>
 > sef_prework:  <br>
   target: dev  <br>
   outputs: <br>
     dev: <br>
       type: duckdb <br>
-      path: <your_project_dir_path>/mydb.duckdb <br>
+      path: <add_your_project_dir_path>/mydb.duckdb <br>
 
 >Run models and tests: <br>
- ```dbt run```<br>
+```dbt run```<br>
 ```dbt test```<br>
 ```dbt docs generate```<br>
 ```dbt docs serve```<br>
 
-## 2. What Transformations I Applied and Why
-<u> **Staging models** </u>
+**Step 6: Create Models:**<br>
+•	Staging Models<br>
+•	Intermediate Model<br>
+•	Final Model<br>
 
-**stg_users:** selected user_id, signup_date, city → cleaned user data.
+**Step 7: Added Tests:**<br>
+•	File: schema.yml<br>
 
-**stg_orders:** selected order_id, user_id, order_date, amount, status → standardized order data.
+**Step 8: Final Model & Documentation:**<br>
+•	Final Model<br>
+•	Added descriptions in schema.yml:
+> models:<br>
+    name: fct_daily_revenue<br>
+    description: "Aggregated daily revenue from orders with completed payments"<br>
 
-**stg_payments:** selected payment_id, order_id, payment_method, payment_status → cleaned payment data.
+> •	Commands to Execute:<br>
+```dbt docs generate```<br>
+```dbt docs serve```<br>
 
-<u>**Intermediate model**</u>
+•	Result:<br>
+Serving docs at 'localhost'<br>
+Documentation site opened in browser.
 
-**int_orders:** joined orders with payments → combined order and payment details for analysis.
+**Step 9: Run & test Validated:**<br>
+>•	Command to Execute:<br>
+```dbt run```<br>
+```dbt test```<br>
 
-<u>**Final model**</u>
+•	**Result:** Completed successfully<br>
+•	**Tests output:**
+PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3<br>
 
-**fct_daily_revenue:** aggregated amount by order_date where payment_status = 'Completed' → produced daily revenue totals.
+## 2. What Transformations I Applied and Why:
+•	<u> **Staging models** </u> <br>
+**stg_users:** <br>
+Selected user_id, signup_date, city → *cleaned user data*<br>
+**stg_orders:** <br>
+Selected order_id, user_id, order_date, amount, status → *standardized order data*<br>
+**stg_payments:** <br>
+Selected payment_id, order_id, payment_method, payment_status → *cleaned payment data*<br>
 
-## 3. Assumptions Made
-•	Only completed payments contribute to 'revenue' <br>
-•	Each order has a unique 'order_id'<br>
-•	Each user has a unique 'user_id'<br>
-•	Each payment has a unique 'payment_id'<br>
-•	Revenue is calculated strictly from the amount field in 'orders.csv'
+•	<u>**Intermediate model**</u><br>
+**int_orders:** <br>
+Joined **orders** with **payments** → *combined order and payment details for analysis*
 
-## 4. What Confused or Challenged Me
-•	'Profiles.yml'  path issues: Initially dbt couldn’t find mydb.duckdb until I corrected the path and used forward slashes. <br>
-•	Semicolons in SQL: dbt models failed when queries ended with ';' Removing them fixed the parser errors.<br>
-•	Configuration Error: dbt warned about unused paths in dbt_project.yml until I aligned folder names (staging, intermediate, final).<br>
-•	Encountered and fixed Runtime Error: (No dbt_project.yml found at expected path C:\Users\admin\Desktop\AG\Assignment Solution\dbt_project.yml)<br>
-•	Joins: Ensuring the join between orders and payments was correct.
+•	<u>**Final model**</u><br>
+**fct_daily_revenue:** <br>
+*Aggregated **Amount*** by **order_date** where **payment_status = 'Completed'** → *produced daily revenue totals*
 
-## 5. What I Would Improve With More Time
+## 3. Assumptions Made:
+•	Only *Completed Payments* contribute to '**revenue**' <br>
+•	Each *Order* has a Unique '**order_id**'<br>
+•	Each *User* has a Unique '**user_id**'<br>
+•	Each *Payment* has a Unique '**payment_id**'<br>
+•	*Revenue is Calculated* strictly from the *Amount* field in '**orders.csv**'
+
+## 4. What Confused or Challenged Me:
+•	**'Profiles.yml'  path issues:** <br>
+Initially dbt couldn’t find mydb.duckdb until I corrected the path and used forward slashes. <br>
+•	**Semicolons in SQL:** <br>
+dbt models failed when queries ended with ';' Removing them fixed the parser errors.<br>
+•	**Configuration Error:** <br>
+dbt warned about unused paths in dbt_project.yml until I aligned folder names (staging, intermediate, final)<br>
+•	**Encountered and fixed Runtime Error:** <br>
+(No dbt_project.yml found at expected path C:\Users\admin\Desktop...\Assignment Solution\dbt_project.yml)<br>
+•	**Joins:** <br>
+Ensuring the join between orders and payments was correct.
+
+## 5. What I Would Improve With More Time:
 •	Add more tests (e.g., check valid payment_status values, ensure amount > 0) <br>
 •	Extend final model to include revenue by city or payment method <br>
 •	Automate CSV ingestion rather than manual loading <br>
@@ -85,7 +128,6 @@ Writing models + restructuring staging queries: **~1.5 hours** <br>
 Adding tests + documentation: **~1 hour** <br>
 Preparing README + reflection + Github Repo: **~2 hours** <br>
 **Total: ~7.5 hours**
-
 
 ## Reflection:
 
